@@ -1,7 +1,14 @@
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-sm-8">
-      <div id="movies">
+    <div class="col-sm-8 pt-5">
+      <%= form_tag movies_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a movie"
+        %>
+      <% end %>
+      <div id="movies" class="mt-5">
         <% @movies.each do |movie| %>
           <h4><%= movie.title %></h4>
           <p><%= movie.synopsis %></p>
