@@ -9,6 +9,9 @@ class Movie < ApplicationRecord
   #   using: {
   #     tsearch: { prefix: true } # <-- now `superman batm` will return something!
   #   }
-  include PgSearch::Model
-  multisearchable against: [:title, :synopsis]
+
+  # include PgSearch::Model
+  # multisearchable against: [:title, :synopsis]
+
+  searchkick
 end
